@@ -1,0 +1,9 @@
+hosting:
+  web:
+    src: ../.build
+    config:
+      browser_router: false
+dependencies:
+  sockets:
+    user-auth:
+      version: 0.0.5

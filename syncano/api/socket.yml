@@ -1,0 +1,44 @@
+name: api
+version: 0.0.1
+
+classes:
+  message:
+    - name: author
+      type: reference
+      target: user
+    - name: content
+      type: text
+
+endpoints:
+  message/poll:
+    channel: messages
+  message/create:
+    file: message/create.js
+    response:
+      success:
+        exit_code: 200
+      fail:
+        exit_code: 400
+  message/list:
+    file: message/list.js
+    response:
+      success:
+        exit_code: 200
+      fail:
+        exit_code: 400
+  profile:
+    file: profile.js
+    response:
+      success:
+        description: Success
+        example: |
+          {
+            "username": "john"
+          }
+      fail:
+        exit_code: 400
+        description: Failed
+        example: |
+          {
+            "message": "User was not found."
+          }
